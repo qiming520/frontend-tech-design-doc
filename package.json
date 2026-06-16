@@ -1,6 +1,6 @@
 {
   "name": "frontend-tech-design-doc-skill",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Codex skill for generating frontend technical design documents from internal requirement links.",
   "type": "module",
   "license": "UNLICENSED",
