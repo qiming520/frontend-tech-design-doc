@@ -4,6 +4,14 @@
   "description": "Codex skill for generating frontend technical design documents from internal requirement links.",
   "type": "module",
   "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qiming520/frontend-tech-design-doc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/qiming520/frontend-tech-design-doc/issues"
+  },
+  "homepage": "https://github.com/qiming520/frontend-tech-design-doc#readme",
   "files": [
     "skills",
     "bin",

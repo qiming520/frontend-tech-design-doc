@@ -9,7 +9,7 @@ https://17work.dc.servyou-it.com/read/book/100/99216
 ## Install From Git
 
 ```bash
-npx -y skills add <your-github-repo-url>
+npx -y skills add https://github.com/qiming520/frontend-tech-design-doc.git
 ```
 
 ## Package Contents
