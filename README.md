@@ -1,6 +1,8 @@
 # frontend-tech-design-doc
 
-用于生成前端技术设计文档的 Codex skill。它会根据需求链接读取需求内容，结合现有前端项目或 codeGraph 知识图谱做项目分析，按公司 17work 模板输出前端详设文档。
+用于生成前端技术设计文档的 Agent Skill。它会根据需求链接读取需求内容，结合现有前端项目或 codeGraph 知识图谱做项目分析，按公司 17work 模板输出前端详设文档。
+
+这个仓库不是只给 Codex 用。核心能力写在标准 `SKILL.md` 中，可同时给 Codex 和 Claude Code 使用；`agents/openai.yaml` 只是 Codex 侧的展示元数据，不影响 Claude Code 使用。
 
 模板来源：
 
@@ -14,7 +16,7 @@ https://17work.dc.servyou-it.com/read/book/100/99216
 - 需要调用专家 agent 或执行专家审查，补齐风险、影响点、文件改动清单和待确认项。
 - 需要同时产出 HTML 和 Markdown，便于归档、评审或上传到其他平台。
 
-## 安装
+## 安装到 Codex
 
 从 GitHub 安装 skill：
 
@@ -22,7 +24,39 @@ https://17work.dc.servyou-it.com/read/book/100/99216
 npx -y skills add https://github.com/qiming520/frontend-tech-design-doc.git
 ```
 
-从 npm 安装包：
+也可以通过 npm 包安装到 Codex 用户 skill 目录：
+
+```bash
+npx frontend-tech-design-doc-skill install codex
+```
+
+## 安装到 Claude Code
+
+通过 npm 一键安装到 Claude Code 用户 skill 目录：
+
+```bash
+npx frontend-tech-design-doc-skill install claude
+```
+
+安装后目录为：
+
+```text
+~/.claude/skills/frontend-tech-design-doc/SKILL.md
+```
+
+如果只想在某个项目里启用，可以安装为项目级 Claude Code skill：
+
+```bash
+npx frontend-tech-design-doc-skill install claude --project /path/to/frontend-project
+```
+
+安装后目录为：
+
+```text
+/path/to/frontend-project/.claude/skills/frontend-tech-design-doc/SKILL.md
+```
+
+## npm 包
 
 ```bash
 npm i frontend-tech-design-doc-skill
@@ -31,12 +65,18 @@ npm i frontend-tech-design-doc-skill
 查看 npm 包内 skill 路径：
 
 ```bash
-npx frontend-tech-design-doc-skill
+npx frontend-tech-design-doc-skill path
+```
+
+同时安装到 Codex 和 Claude Code：
+
+```bash
+npx frontend-tech-design-doc-skill install all
 ```
 
 ## 使用方式
 
-在 Codex 中这样提需求即可触发：
+在 Codex 或 Claude Code 中这样提需求即可触发：
 
 ```text
 使用 frontend-tech-design-doc skill，根据这个需求链接生成前端技术设计文档：
@@ -62,7 +102,7 @@ https://17work.dc.servyou-it.com/read/book/100/99216
 
 ## 执行流程
 
-skill 会引导 Codex 按以下顺序执行：
+skill 会引导 Agent 按以下顺序执行：
 
 1. 读取 17work 前端详设模板，模板链接作为最新格式来源。
 2. 读取需求文档，提取业务背景、技术背景、需求规则、相关链接、接口依赖和验收重点。

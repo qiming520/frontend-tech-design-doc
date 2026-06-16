@@ -1,7 +1,7 @@
 {
   "name": "frontend-tech-design-doc-skill",
-  "version": "0.1.1",
-  "description": "Codex skill for generating frontend technical design documents from internal requirement links.",
+  "version": "0.1.2",
+  "description": "Agent skill for generating frontend technical design documents from internal requirement links.",
   "type": "module",
   "license": "UNLICENSED",
   "repository": {
@@ -19,7 +19,7 @@
     "README.md"
   ],
   "bin": {
-    "frontend-tech-design-doc-skill": "bin/print-path.cjs"
+    "frontend-tech-design-doc-skill": "bin/cli.cjs"
   },
   "scripts": {
     "validate:skill": "node scripts/validate-skill.mjs skills/frontend-tech-design-doc",
@@ -27,6 +27,8 @@
   },
   "keywords": [
     "codex-skill",
+    "claude-code-skill",
+    "agent-skill",
     "frontend",
     "technical-design",
     "17work"
