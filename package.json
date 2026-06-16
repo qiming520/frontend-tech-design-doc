@@ -19,7 +19,7 @@
     "README.md"
   ],
   "bin": {
-    "frontend-tech-design-doc-skill": "./bin/print-path.cjs"
+    "frontend-tech-design-doc-skill": "bin/print-path.cjs"
   },
   "scripts": {
     "validate:skill": "node scripts/validate-skill.mjs skills/frontend-tech-design-doc",
